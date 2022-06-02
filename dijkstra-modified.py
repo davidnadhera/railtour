@@ -111,7 +111,7 @@ odj = pd.read_csv('C:\\idos\\odjezdy.csv',names=['idodjezdy','cas','idvlaky','id
 pres['cas'] = pd.to_timedelta(pres['cas'])
 stan['prestup'] = pd.to_timedelta(stan['prestup'])
 stanice = stan.index.tolist()
-for start in range(3262,3297):
+for start in range(3041,3042):
     print(start)
     for i in stan.index.tolist():
         if stan.at[i,'checkpoint'] == 1:

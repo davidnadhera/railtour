@@ -27,11 +27,11 @@ SPANEK_DO = datetime(year=2022, month=8, day=11, hour=2, minute=0)
 TEMP_BLOCK = []
 BLOCK_DO = datetime(year=2022, month=8, day=9, hour=0, minute=0)
 COUNT_PREMIE = False
-TOTAL_KM = 145
-PENALE = 0.0
+TOTAL_KM = 185
+PENALE = 0.25
 USE_VYKON = False
-LIMIT_VYKON = 0.3
-LIMIT_POCET = 40
+LIMIT_VYKON = 0
+LIMIT_POCET = 100
 
 def countVykon1(trasa):
     doba = trasa.cas-starttime

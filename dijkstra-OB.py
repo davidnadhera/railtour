@@ -34,7 +34,8 @@ def dijkstra(start,casy):
     while len(h) and ((x==0) or (temptrasa.doba <= timedelta(hours = 48))):       
         x+=1
         if (hotovo[idstanice]>curr_odjezd) or \
-        (((curr_odjezd>temptrasa.prijezd.time()) or (temptrasa.doba>=timedelta(days=1))) and (temptrasa.prijezd.time()>=prvni[idstanice])):
+           (temptrasa.doba >= timedelta(days=1)) or \
+           ((curr_odjezd>temptrasa.prijezd.time()) and (temptrasa.prijezd.time()>=prvni[idstanice])):
             ((idstanice,curr_odjezd),temptrasa) = h.popitem()            
             continue
         hotovo[idstanice] = curr_odjezd

@@ -48,14 +48,14 @@ class TempTrasa:
                   'doba': str(self.doba),
                   'km': self.km,
                   'presundo': str(self.lastPresun),
-                  'trasa': []}
-        for i,spoj in enumerate(self.trasa):
-            dict_spoj = {'odjezd': str(spoj.odjezd),
-                         'prijezd': str(spoj.prijezd),
-                         'vlak': spoj.idvlaky,
-                         'od': spoj.od,
-                         'do': spoj.do}
-            result['trasa'].append(dict_spoj)
+                  'trasa': self.trasa}
+        # for i,spoj in enumerate(self.trasa):
+        #     dict_spoj = {'odjezd': str(spoj.odjezd),
+        #                  'prijezd': str(spoj.prijezd),
+        #                  'vlak': spoj.idvlaky,
+        #                  'od': spoj.od,
+        #                  'do': spoj.do}
+        #     result['trasa'].append(dict_spoj)
         return result
 
 

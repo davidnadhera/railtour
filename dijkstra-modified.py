@@ -34,7 +34,8 @@ def dijkstra(start,casy):
     while len(h) and ((x==0) or (temptrasa.doba <= timedelta(hours = 48))):       
         x+=1
         if (hotovo[idstanice]>curr_odjezd) or \
-        (((curr_odjezd>temptrasa.prijezd.time()) or (temptrasa.doba>=timedelta(days=1))) and (temptrasa.prijezd.time()>=prvni[idstanice])):
+           (temptrasa.doba >= timedelta(days=1)) or \
+           ((curr_odjezd>temptrasa.prijezd.time()) and (temptrasa.prijezd.time()>=prvni[idstanice])):
             ((idstanice,curr_odjezd),temptrasa) = h.popitem()            
             continue
         hotovo[idstanice] = curr_odjezd
@@ -111,7 +112,7 @@ odj = pd.read_csv('C:\\idos\\odjezdy.csv',names=['idodjezdy','cas','idvlaky','id
 pres['cas'] = pd.to_timedelta(pres['cas'])
 stan['prestup'] = pd.to_timedelta(stan['prestup'])
 stanice = stan.index.tolist()
-for start in range(3041,3042):
+for start in range(3001,3297):
     print(start)
     for i in stan.index.tolist():
         if stan.at[i,'checkpoint'] == 1:
